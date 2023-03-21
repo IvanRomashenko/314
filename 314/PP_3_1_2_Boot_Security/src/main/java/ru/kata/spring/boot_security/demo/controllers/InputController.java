@@ -7,9 +7,9 @@ import ru.kata.spring.boot_security.demo.service.UserService;
 @Controller
 public class InputController {
 
-    @GetMapping("/")
-    public String loginPage() {
-        return "login";
-    }
+//    @GetMapping("/")
+//    public String loginPage() {
+//        return "login";
+//    }
 
 }

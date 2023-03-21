@@ -48,7 +48,7 @@ public class UserService implements UserDetailsService {
 
     @Transactional
     public void saveUser(User user) {
-        user.setRoles(user.getRoles());
+  //      user.setRoles(user.getRoles());
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         userRepository.save(user);
     }
@@ -65,11 +65,16 @@ public class UserService implements UserDetailsService {
 
     @Transactional
     public void updateUser(User user) {
-        user.setRoles(user.getRoles());
+  //      user.setRoles(user.getRoles());
         userRepository.save(user);
     }
     @Transactional
     public void deleteUserById(Long id){
         userRepository.deleteById(id);
+    }
+
+    public User findById(Long id) {
+
+        return userRepository.findById(id).orElse(null);
     }
 }
